@@ -1,6 +1,45 @@
-body{
-    background-color: #3b8beb ;
+*{
+    background-color: #0a0822 ;
+    margin: 0;
+    padding: 0;
+
 }
-h1{
-    color: #320e41;
+header{
+    height: 70px;
+    border-style: solid;
+    border-color: #eb17c7;
+    border-width: 0px 0px 2px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#navbar li{
+    list-style: none;
+    display: inline-block;
+    margin: 10px;
+}
+
+#navbar li a{
+    color: #fdfdfd;
+    text-decoration: none;
+}
+
+
+#JetSpot {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 100px;
+    color: #fdfdfd;
+    padding: 70px;
+    
+}
+#JSbio{
+    width: 50%;
+    padding-left: 70px;
+}
+p{
+    color: #fdfdfd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
