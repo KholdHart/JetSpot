@@ -1,45 +1,389 @@
-*{
-    background-color: #0a0822 ;
-    margin: 0;
-    padding: 0;
-
+:root {
+    --accent: #eb17c7;
+    --bg: #0a0822;
+    --text: #fdfdfd;
+    --secondary: #181642;
+    --cta: #ff4f8b;
+    --cta-hover: #d9006e;
+    --success: #00e6a8;
+    --shadow: 0 4px 24px rgba(0,0,0,0.15);
 }
-header{
-    height: 70px;
-    border-style: solid;
-    border-color: #eb17c7;
-    border-width: 0px 0px 2px 0px;
+
+html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+header {
+    border-bottom: 2px solid var(--accent);
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#navbar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
 }
-#navbar{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent);
+    letter-spacing: 2px;
 }
-#navbar li{
+
+#navbar ul {
+    display: flex;
+    gap: 1.5rem;
+}
+
+#navbar li {
     list-style: none;
-    display: inline-block;
-    margin: 10px;
 }
 
-#navbar li a{
-    color: #fdfdfd;
+#navbar li a {
+    color: var(--text);
     text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s;
 }
 
+#navbar li a:hover,
+#navbar li a:focus {
+    color: var(--accent);
+}
 
-#JetSpot {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 100px;
-    color: #fdfdfd;
-    padding: 70px;
-    
+.hero {
+    text-align: center;
+    padding: 5rem 1rem 3rem 1rem;
+    background: var(--secondary);
+    box-shadow: var(--shadow);
 }
-#JSbio{
-    width: 50%;
-    padding-left: 70px;
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--accent);
 }
-p{
-    color: #fdfdfd;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+.subheadline {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+}
+
+.cta-btn {
+    display: inline-block;
+    background: var(--cta);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 40px;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+.cta-btn:hover, .cta-btn:focus {
+    background: var(--cta-hover);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.hero-img img {
+    margin-top: 2rem;
+    max-width: 500px;
+    width: 90%;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--accent);
+}
+
+section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 1rem 2rem 1rem;
+}
+
+.services {
+    text-align: center;
+}
+.services h2 {
+    color: var(--accent);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.service {
+    background: var(--secondary);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    min-width: 220px;
+    max-width: 300px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--accent);
+    flex: 1 1 220px;
+}
+.service h3 {
+    color: var(--cta);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+.service p {
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.cta-link {
+    display: inline-block;
+    color: var(--cta);
+    font-weight: bold;
+    margin-top: 1rem;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.cta-link:hover, .cta-link:focus {
+    color: var(--cta-hover);
+}
+
+.portfolio {
+    text-align: center;
+}
+.portfolio h2 {
+    color: var(--accent);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+.portfolio-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.portfolio-item {
+    background: var(--secondary);
+    border-radius: 16px;
+    padding: 1.5rem;
+    max-width: 320px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--accent);
+    text-align: left;
+}
+.portfolio-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--cta);
+}
+.portfolio-item h3 {
+    color: var(--cta);
+    margin-bottom: 0.5rem;
+}
+.coming-soon {
+    color: var(--success);
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.testimonials {
+    background: var(--secondary);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    padding: 3rem 2rem;
+    margin: 3rem 0;
+    text-align: center;
+}
+.testimonials h2 {
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+blockquote {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin: 1.5rem auto;
+    max-width: 600px;
+    border-left: 4px solid var(--cta);
+    padding-left: 1rem;
+    font-style: italic;
+}
+cite {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--cta);
+    font-size: 1rem;
+}
+
+.about {
+    text-align: center;
+}
+.about h2 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+.about p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+.why-choose {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.why-choose li {
+    background: var(--secondary);
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    color: var(--success);
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 1px solid var(--accent);
+    box-shadow: var(--shadow);
+}
+
+.contact {
+    text-align: center;
+}
+.contact h2 {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto 1.5rem auto;
+    background: var(--secondary);
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--accent);
+}
+.contact input,
+.contact textarea {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--cta);
+    background: #fff;
+    color: #222;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+}
+.contact textarea {
+    min-height: 100px;
+}
+.contact input:focus,
+.contact textarea:focus {
+    outline: 2px solid var(--cta);
+}
+.contact button.cta-btn {
+    margin-top: 0.5rem;
+    width: 100%;
+}
+.contact p, .contact a {
+    color: var(--text);
+    font-size: 1rem;
+}
+
+footer {
+    background: var(--secondary);
+    color: var(--text);
+    text-align: center;
+    padding: 2rem 1rem 1rem 1rem;
+    margin-top: 3rem;
+    border-top: 2px solid var(--accent);
+}
+.footer-nav {
+    margin-bottom: 1rem;
+}
+.footer-nav a {
+    color: var(--cta);
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.footer-nav a:hover, .footer-nav a:focus {
+    color: var(--cta-hover);
+}
+.footer-social {
+    margin-bottom: 1rem;
+}
+.footer-social a {
+    color: var(--success);
+    margin: 0 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.footer-social a:hover, .footer-social a:focus {
+    color: var(--cta);
+}
+footer p {
+    color: var(--text);
+    font-size: 0.95rem;
+    margin: 0.5rem 0;
+}
+footer a {
+    color: var(--cta);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+footer a:hover, footer a:focus {
+    color: var(--cta-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .service-list, .portfolio-items, .why-choose {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service, .portfolio-item, .why-choose li {
+        max-width: 95vw;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
+    #navbar ul {
+        gap: 0.7rem;
+    }
+    section {
+        padding: 2.5rem 0.5rem 1.5rem 0.5rem;
+    }
+    .testimonials, .about, .contact form {
+        padding: 1.2rem 0.5rem;
+    }
 }
